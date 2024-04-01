@@ -1176,13 +1176,13 @@ svg :is([fill="white"], [fill^="#fff"]) {
       </h2>
 <p id="section-3-1">Technical authorisation scopes are defined between Provider and Initiator and permit access to resource server endpoints. In addition, this specification also outlines the title and a simple description of the language to use to describe the data set referred to as Data Set Language.<a href="#section-3-1" class="pilcrow">¶</a></p>
 <p id="section-3-2">Providers and Initiators <span class="bcp14">MUST</span> utilise the prescribed authorisation scopes and Data Set Language when seeking Consumer authorisation.<a href="#section-3-2" class="pilcrow">¶</a></p>
+<p id="section-3-3">For Consumers representing Individuals, Providers and Initiators <span class="bcp14">MUST</span> utilise the following authorisation scopes and Data Set Language when seeking Consumer authorisation:<a href="#section-3-3" class="pilcrow">¶</a></p>
 <table class="center" id="table-1">
         <caption><a href="#table-1" class="selfRef">Table 1</a></caption>
 <thead>
           <tr>
             <th class="text-left" rowspan="1" colspan="1">
               <code>scope</code> value</th>
-            <th class="text-left" rowspan="1" colspan="1">Consumer Type</th>
             <th class="text-left" rowspan="1" colspan="1">Data Set Language</th>
           </tr>
         </thead>
@@ -1191,50 +1191,130 @@ svg :is([fill="white"], [fill^="#fff"]) {
             <td class="text-left" rowspan="1" colspan="1">
               <code>common:customer.basic:read</code>
 </td>
-            <td class="text-left" rowspan="1" colspan="1">Individual</td>
             <td class="text-left" rowspan="1" colspan="1">
-              <strong>Name and occupation</strong><br>
-Name;<br>
-Occupation;</td>
+              <strong>Name and occupation</strong>
+</td>
           </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1"></td>
+            <td class="text-left" rowspan="1" colspan="1">Name;</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1"></td>
+            <td class="text-left" rowspan="1" colspan="1">Occupation;</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1"></td>
+            <td class="text-left" rowspan="1" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">
+              <code>common:customer.detail:read</code>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">
+              <strong>Contact Details</strong>
+</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1"></td>
+            <td class="text-left" rowspan="1" colspan="1">Phone;</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1"></td>
+            <td class="text-left" rowspan="1" colspan="1">Email address;</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1"></td>
+            <td class="text-left" rowspan="1" colspan="1">Mail address;</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1"></td>
+            <td class="text-left" rowspan="1" colspan="1">Residential address;</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1"></td>
+            <td class="text-left" rowspan="1" colspan="1"></td>
+          </tr>
+        </tbody>
+      </table>
+<p id="section-3-5">For Consumers representing Entities, Providers and Initiators <span class="bcp14">MUST</span> utilise the following authorisation scopes and Data Set Language when seeking Consumer authorisation:<a href="#section-3-5" class="pilcrow">¶</a></p>
+<table class="center" id="table-2">
+        <caption><a href="#table-2" class="selfRef">Table 2</a></caption>
+<thead>
+          <tr>
+            <th class="text-left" rowspan="1" colspan="1">
+              <code>scope</code> value</th>
+            <th class="text-left" rowspan="1" colspan="1">Data Set Language</th>
+          </tr>
+        </thead>
+        <tbody>
           <tr>
             <td class="text-left" rowspan="1" colspan="1">
               <code>common:customer.basic:read</code>
 </td>
-            <td class="text-left" rowspan="1" colspan="1">Entity</td>
             <td class="text-left" rowspan="1" colspan="1">
-              <strong>Organisation profile</strong><br>
-Agent name and role;<br>
-Organisation name;<br>
-Organisation numbers (ABN or ACN);<br>
-Charity status;<br>
-Establishment date;<br>
-Industry;<br>
-Organisation type<br>
-Country of registration;</td>
+              <strong>Organisation profile</strong>
+</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1"></td>
+            <td class="text-left" rowspan="1" colspan="1">Agent name and role;</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1"></td>
+            <td class="text-left" rowspan="1" colspan="1">Organisation name;</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1"></td>
+            <td class="text-left" rowspan="1" colspan="1">Organisation numbers (ABN or ACN);</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1"></td>
+            <td class="text-left" rowspan="1" colspan="1">Charity status;</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1"></td>
+            <td class="text-left" rowspan="1" colspan="1">Establishment date;</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1"></td>
+            <td class="text-left" rowspan="1" colspan="1">Industry;</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1"></td>
+            <td class="text-left" rowspan="1" colspan="1">Organisation type</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1"></td>
+            <td class="text-left" rowspan="1" colspan="1">Country of registration;</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1"></td>
+            <td class="text-left" rowspan="1" colspan="1"></td>
           </tr>
           <tr>
             <td class="text-left" rowspan="1" colspan="1">
               <code>common:customer.detail:read</code>
 </td>
-            <td class="text-left" rowspan="1" colspan="1">Individual</td>
             <td class="text-left" rowspan="1" colspan="1">
-              <strong>Contact Details</strong><br>
-Phone;<br>
-Email address;<br>
-Mail address;<br>
-Residential address;</td>
+              <strong>Organisation contact details</strong>
+</td>
           </tr>
           <tr>
-            <td class="text-left" rowspan="1" colspan="1">
-              <code>common:customer.detail:read</code>
-</td>
-            <td class="text-left" rowspan="1" colspan="1">Entity</td>
-            <td class="text-left" rowspan="1" colspan="1">
-              <strong>Organisation contact details</strong><br>
-Organisation address;<br>
-Mail address;<br>
-Phone number;</td>
+            <td class="text-left" rowspan="1" colspan="1"></td>
+            <td class="text-left" rowspan="1" colspan="1">Organisation address;</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1"></td>
+            <td class="text-left" rowspan="1" colspan="1">Mail address;</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1"></td>
+            <td class="text-left" rowspan="1" colspan="1">Phone number;</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1"></td>
+            <td class="text-left" rowspan="1" colspan="1"></td>
           </tr>
         </tbody>
       </table>
@@ -1243,50 +1323,124 @@ Phone number;</td>
         <h3 id="name-overlapping-scope-optimisat">
 <a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-overlapping-scope-optimisat" class="section-name selfRef">Overlapping Scope Optimisation</a>
         </h3>
-<p id="section-3.1-1">In certain situations multiple technical scopes overlap which can lead to confusion by the User granting permission for the Consumer (which may be themselves or an entity they represent). In order to alleviate this Data Cluster Language presentation <span class="bcp14">MUST</span> be collapsed as follows:<a href="#section-3.1-1" class="pilcrow">¶</a></p>
-<table class="center" id="table-2">
-          <caption><a href="#table-2" class="selfRef">Table 2</a></caption>
+<p id="section-3.1-1">In certain situations multiple technical scopes overlap which can lead to confusion by the User granting permission for the Consumer (which may be themselves or an entity they represent).<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+<p id="section-3.1-2">For Consumers representing Individuals, Data Cluster Language presentation <span class="bcp14">MUST</span> be collapsed as follows:<a href="#section-3.1-2" class="pilcrow">¶</a></p>
+<table class="center" id="table-3">
+          <caption><a href="#table-3" class="selfRef">Table 3</a></caption>
 <thead>
             <tr>
               <th class="text-left" rowspan="1" colspan="1">
                 <code>scope</code> value(s)</th>
-              <th class="text-left" rowspan="1" colspan="1">Consumer Type</th>
               <th class="text-left" rowspan="1" colspan="1">Data Set Language</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">
-                <code>common:customer.basic:read</code> and <code>common:customer.detail:read</code>
-</td>
-              <td class="text-left" rowspan="1" colspan="1">Individual</td>
+                <code>common:customer.basic:read</code> and</td>
               <td class="text-left" rowspan="1" colspan="1">
-                <strong>Name, occupation, contact details</strong><br>
-Name;<br>
-Occupation;<br>
-Phone;<br>
-Email address;<br>
-Mail address;<br>
-Residential address;</td>
+                <strong>Name, occupation, contact details</strong>
+</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">
-                <code>common:customer.basic:read</code> and <code>common:customer.detail:read</code>
+                <code>common:customer.detail:read</code>
 </td>
-              <td class="text-left" rowspan="1" colspan="1">Entity</td>
+              <td class="text-left" rowspan="1" colspan="1">Name;</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1"></td>
+              <td class="text-left" rowspan="1" colspan="1">Occupation;</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1"></td>
+              <td class="text-left" rowspan="1" colspan="1">Phone;</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1"></td>
+              <td class="text-left" rowspan="1" colspan="1">Email address;</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1"></td>
+              <td class="text-left" rowspan="1" colspan="1">Mail address;</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1"></td>
+              <td class="text-left" rowspan="1" colspan="1">Residential address;</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1"></td>
+              <td class="text-left" rowspan="1" colspan="1"></td>
+            </tr>
+          </tbody>
+        </table>
+<p id="section-3.1-4">For Consumers representing Entities, Data Cluster Language presentation <span class="bcp14">MUST</span> be collapsed as follows:<a href="#section-3.1-4" class="pilcrow">¶</a></p>
+<table class="center" id="table-4">
+          <caption><a href="#table-4" class="selfRef">Table 4</a></caption>
+<thead>
+            <tr>
+              <th class="text-left" rowspan="1" colspan="1">
+                <code>scope</code> value(s)</th>
+              <th class="text-left" rowspan="1" colspan="1">Data Set Language</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
               <td class="text-left" rowspan="1" colspan="1">
-                <strong>Organisation profile and contact details</strong><br>
-Agent name and role;<br>
-Organisation name;<br>
-Organisation numbers (ABN or ACN);<br>
-Charity status;<br>
-Establishment date;<br>
-Industry;<br>
-Organisation type;<br>
-Country of registration;<br>
-Organisation address;<br>
-Mail address;<br>
-Phone number;</td>
+                <code>common:customer.basic:read</code> and</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <strong>Organisation profile and contact details</strong>
+</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">
+                <code>common:customer.detail:read</code>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">Agent name and role;</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1"></td>
+              <td class="text-left" rowspan="1" colspan="1">Organisation name;</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1"></td>
+              <td class="text-left" rowspan="1" colspan="1">Organisation numbers (ABN or ACN);</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1"></td>
+              <td class="text-left" rowspan="1" colspan="1">Charity status;</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1"></td>
+              <td class="text-left" rowspan="1" colspan="1">Establishment date;</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1"></td>
+              <td class="text-left" rowspan="1" colspan="1">Industry;</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1"></td>
+              <td class="text-left" rowspan="1" colspan="1">Organisation type;</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1"></td>
+              <td class="text-left" rowspan="1" colspan="1">Country of registration;</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1"></td>
+              <td class="text-left" rowspan="1" colspan="1">Organisation address;</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1"></td>
+              <td class="text-left" rowspan="1" colspan="1">Mail address;</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1"></td>
+              <td class="text-left" rowspan="1" colspan="1">Phone number;</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1"></td>
+              <td class="text-left" rowspan="1" colspan="1"></td>
             </tr>
           </tbody>
         </table>
@@ -1317,15 +1471,17 @@ Phone number;</td>
         <h3 id="name-resource-server">
 <a href="#section-4.2" class="section-number selfRef">4.2. </a><a href="#name-resource-server" class="section-name selfRef">Resource Server</a>
         </h3>
-<p id="section-4.2-1">The Provider <span class="bcp14">MUST</span> deliver the following endpoints, secured by the [Authorisation Server] with the specified <code>scope</code> parameters and in accordance with <span>[<a href="#DATARIGHTPLUS-REDOCLY" class="cite xref">DATARIGHTPLUS-REDOCLY</a>]</span>:<a href="#section-4.2-1" class="pilcrow">¶</a></p>
-<table class="center" id="table-3">
-          <caption><a href="#table-3" class="selfRef">Table 3</a></caption>
+<p id="section-4.2-1">The Provider <span class="bcp14">MUST</span> deliver the following authorisation enabled endpoints, in accordance with <span>[<a href="#DATARIGHTPLUS-REDOCLY" class="cite xref">DATARIGHTPLUS-REDOCLY</a>]</span>:<a href="#section-4.2-1" class="pilcrow">¶</a></p>
+<table class="center" id="table-5">
+          <caption><a href="#table-5" class="selfRef">Table 5</a></caption>
 <thead>
             <tr>
               <th class="text-left" rowspan="1" colspan="1">HTTP Endpoint</th>
               <th class="text-left" rowspan="1" colspan="1">Authorisation Scope</th>
               <th class="text-left" rowspan="1" colspan="1">OpenAPI Operation ID</th>
-              <th class="text-left" rowspan="1" colspan="1">Supported <code>x-v</code> Parameters</th>
+              <th class="text-left" rowspan="1" colspan="1">
+                <code>x-v</code>
+</th>
             </tr>
           </thead>
           <tbody>
@@ -1359,14 +1515,16 @@ Phone number;</td>
             </tr>
           </tbody>
         </table>
-<p id="section-4.2-3">In addition the Provider <span class="bcp14">MUST</span> deliver the following endpoints, without authentication and generally available, in accordance with <span>[<a href="#DATARIGHTPLUS-REDOCLY" class="cite xref">DATARIGHTPLUS-REDOCLY</a>]</span>:<a href="#section-4.2-3" class="pilcrow">¶</a></p>
-<table class="center" id="table-4">
-          <caption><a href="#table-4" class="selfRef">Table 4</a></caption>
+<p id="section-4.2-3">In addition the Provider <span class="bcp14">MUST</span> deliver the following unauthenticated and generally available endpoints, in accordance with <span>[<a href="#DATARIGHTPLUS-REDOCLY" class="cite xref">DATARIGHTPLUS-REDOCLY</a>]</span>:<a href="#section-4.2-3" class="pilcrow">¶</a></p>
+<table class="center" id="table-6">
+          <caption><a href="#table-6" class="selfRef">Table 6</a></caption>
 <thead>
             <tr>
               <th class="text-left" rowspan="1" colspan="1">HTTP Endpoint</th>
               <th class="text-left" rowspan="1" colspan="1">OpenAPI Operation ID</th>
-              <th class="text-left" rowspan="1" colspan="1">Supported <code>x-v</code> Parameters</th>
+              <th class="text-left" rowspan="1" colspan="1">
+                <code>x-v</code>
+</th>
             </tr>
           </thead>
           <tbody>

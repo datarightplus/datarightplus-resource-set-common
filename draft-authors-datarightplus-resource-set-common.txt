@@ -86,83 +86,140 @@ Table of Contents
    Providers and Initiators MUST utilise the prescribed authorisation
    scopes and Data Set Language when seeking Consumer authorisation.
 
-   +=============================+============+========================+
-   | scope value                 | Consumer   | Data Set Language      |
-   |                             | Type       |                        |
-   +=============================+============+========================+
-   | common:customer.basic:read  | Individual | *Name and              |
-   |                             |            | occupation*            |
-   |                             |            | Name;                  |
-   |                             |            | Occupation;            |
-   +-----------------------------+------------+------------------------+
-   | common:customer.basic:read  | Entity     | *Organisation          |
-   |                             |            | profile*               |
-   |                             |            | Agent name and role;   |
-   |                             |            | Organisation name;     |
-   |                             |            | Organisation numbers   |
-   |                             |            | (ABN or ACN);          |
-   |                             |            | Charity status;        |
-   |                             |            | Establishment date;    |
-   |                             |            | Industry;              |
-   |                             |            | Organisation type      |
-   |                             |            | Country of             |
-   |                             |            | registration;          |
-   +-----------------------------+------------+------------------------+
-   | common:customer.detail:read | Individual | *Contact Details*      |
-   |                             |            | Phone;                 |
-   |                             |            | Email address;         |
-   |                             |            | Mail address;          |
-   |                             |            | Residential address;   |
-   +-----------------------------+------------+------------------------+
-   | common:customer.detail:read | Entity     | *Organisation          |
-   |                             |            | contact details*       |
-   |                             |            | Organisation           |
-   |                             |            | address;               |
-   |                             |            | Mail address;          |
-   |                             |            | Phone number;          |
-   +-----------------------------+------------+------------------------+
+   For Consumers representing Individuals, Providers and Initiators MUST
+   utilise the following authorisation scopes and Data Set Language when
+   seeking Consumer authorisation:
+
+          +=============================+=======================+
+          | scope value                 | Data Set Language     |
+          +=============================+=======================+
+          | common:customer.basic:read  | *Name and occupation* |
+          +-----------------------------+-----------------------+
+          |                             | Name;                 |
+          +-----------------------------+-----------------------+
+          |                             | Occupation;           |
+          +-----------------------------+-----------------------+
+          +-----------------------------+-----------------------+
+          | common:customer.detail:read | *Contact Details*     |
+          +-----------------------------+-----------------------+
+          |                             | Phone;                |
+          +-----------------------------+-----------------------+
+          |                             | Email address;        |
+          +-----------------------------+-----------------------+
+          |                             | Mail address;         |
+          +-----------------------------+-----------------------+
+          |                             | Residential address;  |
+          +-----------------------------+-----------------------+
+          +-----------------------------+-----------------------+
 
                                   Table 1
+
+   For Consumers representing Entities, Providers and Initiators MUST
+   utilise the following authorisation scopes and Data Set Language when
+   seeking Consumer authorisation:
+
+   +=============================+====================================+
+   | scope value                 | Data Set Language                  |
+   +=============================+====================================+
+   | common:customer.basic:read  | *Organisation profile*             |
+   +-----------------------------+------------------------------------+
+   |                             | Agent name and role;               |
+   +-----------------------------+------------------------------------+
+   |                             | Organisation name;                 |
+   +-----------------------------+------------------------------------+
+   |                             | Organisation numbers (ABN or ACN); |
+   +-----------------------------+------------------------------------+
+   |                             | Charity status;                    |
+   +-----------------------------+------------------------------------+
+   |                             | Establishment date;                |
+   +-----------------------------+------------------------------------+
+   |                             | Industry;                          |
+   +-----------------------------+------------------------------------+
+   |                             | Organisation type                  |
+   +-----------------------------+------------------------------------+
+   |                             | Country of registration;           |
+   +-----------------------------+------------------------------------+
+   +-----------------------------+------------------------------------+
+   | common:customer.detail:read | *Organisation contact details*     |
+   +-----------------------------+------------------------------------+
+   |                             | Organisation address;              |
+   +-----------------------------+------------------------------------+
+   |                             | Mail address;                      |
+   +-----------------------------+------------------------------------+
+   |                             | Phone number;                      |
+   +-----------------------------+------------------------------------+
+   +-----------------------------+------------------------------------+
+
+                                 Table 2
 
 3.1.  Overlapping Scope Optimisation
 
    In certain situations multiple technical scopes overlap which can
    lead to confusion by the User granting permission for the Consumer
-   (which may be themselves or an entity they represent).  In order to
-   alleviate this Data Cluster Language presentation MUST be collapsed
-   as follows:
+   (which may be themselves or an entity they represent).
 
-   +=============================+============+=======================+
-   | scope value(s)              | Consumer   | Data Set Language     |
-   |                             | Type       |                       |
-   +=============================+============+=======================+
-   | common:customer.basic:read  | Individual | *Name, occupation,    |
-   | and                         |            | contact details*      |
-   | common:customer.detail:read |            | Name;                 |
-   |                             |            | Occupation;           |
-   |                             |            | Phone;                |
-   |                             |            | Email address;        |
-   |                             |            | Mail address;         |
-   |                             |            | Residential address;  |
-   +-----------------------------+------------+-----------------------+
-   | common:customer.basic:read  | Entity     | *Organisation profile |
-   | and                         |            | and contact details*  |
-   | common:customer.detail:read |            | Agent name and role;  |
-   |                             |            | Organisation name;    |
-   |                             |            | Organisation numbers  |
-   |                             |            | (ABN or ACN);         |
-   |                             |            | Charity status;       |
-   |                             |            | Establishment date;   |
-   |                             |            | Industry;             |
-   |                             |            | Organisation type;    |
-   |                             |            | Country of            |
-   |                             |            | registration;         |
-   |                             |            | Organisation address; |
-   |                             |            | Mail address;         |
-   |                             |            | Phone number;         |
-   +-----------------------------+------------+-----------------------+
+   For Consumers representing Individuals, Data Cluster Language
+   presentation MUST be collapsed as follows:
 
-                                 Table 2
+          +================================+====================+
+          | scope value(s)                 | Data Set Language  |
+          +================================+====================+
+          | common:customer.basic:read and | *Name, occupation, |
+          |                                | contact details*   |
+          +--------------------------------+--------------------+
+          | common:customer.detail:read    | Name;              |
+          +--------------------------------+--------------------+
+          |                                | Occupation;        |
+          +--------------------------------+--------------------+
+          |                                | Phone;             |
+          +--------------------------------+--------------------+
+          |                                | Email address;     |
+          +--------------------------------+--------------------+
+          |                                | Mail address;      |
+          +--------------------------------+--------------------+
+          |                                | Residential        |
+          |                                | address;           |
+          +--------------------------------+--------------------+
+          +--------------------------------+--------------------+
+
+                                  Table 3
+
+   For Consumers representing Entities, Data Cluster Language
+   presentation MUST be collapsed as follows:
+
+        +================================+=======================+
+        | scope value(s)                 | Data Set Language     |
+        +================================+=======================+
+        | common:customer.basic:read and | *Organisation profile |
+        |                                | and contact details*  |
+        +--------------------------------+-----------------------+
+        | common:customer.detail:read    | Agent name and role;  |
+        +--------------------------------+-----------------------+
+        |                                | Organisation name;    |
+        +--------------------------------+-----------------------+
+        |                                | Organisation numbers  |
+        |                                | (ABN or ACN);         |
+        +--------------------------------+-----------------------+
+        |                                | Charity status;       |
+        +--------------------------------+-----------------------+
+        |                                | Establishment date;   |
+        +--------------------------------+-----------------------+
+        |                                | Industry;             |
+        +--------------------------------+-----------------------+
+        |                                | Organisation type;    |
+        +--------------------------------+-----------------------+
+        |                                | Country of            |
+        |                                | registration;         |
+        +--------------------------------+-----------------------+
+        |                                | Organisation address; |
+        +--------------------------------+-----------------------+
+        |                                | Mail address;         |
+        +--------------------------------+-----------------------+
+        |                                | Phone number;         |
+        +--------------------------------+-----------------------+
+        +--------------------------------+-----------------------+
+
+                                 Table 4
 
 4.  Providers
 
@@ -179,41 +236,36 @@ Table of Contents
 
 4.2.  Resource Server
 
-   The Provider MUST deliver the following endpoints, secured by the
-   [Authorisation Server] with the specified scope parameters and in
-   accordance with [DATARIGHTPLUS-REDOCLY]:
+   The Provider MUST deliver the following authorisation enabled
+   endpoints, in accordance with [DATARIGHTPLUS-REDOCLY]:
 
-   +=================+============================+=================+==========+
-   |HTTP Endpoint    |Authorisation Scope         |OpenAPI Operation|Supported |
-   |                 |                            |ID               |x-v       |
-   |                 |                            |                 |Parameters|
-   +=================+============================+=================+==========+
-   |GET /common/     |common:customer.basic:read  |getCustomer      |1         |
-   |customer         |                            |                 |          |
-   +-----------------+----------------------------+-----------------+----------+
-   |GET              |common:customer.basic:detail|getCustomerDetail|1         |
-   |/common/customer/|                            |                 |          |
-   |detail           |                            |                 |          |
-   +-----------------+----------------------------+-----------------+----------+
+   +=================+============================+=================+===+
+   |HTTP Endpoint    |Authorisation Scope         |OpenAPI Operation|x-v|
+   |                 |                            |ID               |   |
+   +=================+============================+=================+===+
+   |GET /common/     |common:customer.basic:read  |getCustomer      |1  |
+   |customer         |                            |                 |   |
+   +-----------------+----------------------------+-----------------+---+
+   |GET              |common:customer.basic:detail|getCustomerDetail|1  |
+   |/common/customer/|                            |                 |   |
+   |detail           |                            |                 |   |
+   +-----------------+----------------------------+-----------------+---+
 
-                                  Table 3
+                                  Table 5
 
-   In addition the Provider MUST deliver the following endpoints,
-   without authentication and generally available, in accordance with
+   In addition the Provider MUST deliver the following unauthenticated
+   and generally available endpoints, in accordance with
    [DATARIGHTPLUS-REDOCLY]:
 
-   +=================+======================+==========================+
-   | HTTP Endpoint   | OpenAPI Operation ID | Supported x-v            |
-   |                 |                      | Parameters               |
-   +=================+======================+==========================+
-   | GET /discovery/ | getOutages           | 1                        |
-   | outages         |                      |                          |
-   +-----------------+----------------------+--------------------------+
-   | GET /discovery/ | getStatus            | 1                        |
-   | status          |                      |                          |
-   +-----------------+----------------------+--------------------------+
+          +========================+======================+=====+
+          | HTTP Endpoint          | OpenAPI Operation ID | x-v |
+          +========================+======================+=====+
+          | GET /discovery/outages | getOutages           | 1   |
+          +------------------------+----------------------+-----+
+          | GET /discovery/status  | getStatus            | 1   |
+          +------------------------+----------------------+-----+
 
-                                  Table 4
+                                  Table 6
 
 5.  Initiators
 
