@@ -42,7 +42,7 @@ This specification utilises the various terms outlined within [@!DATARIGHTPLUS-R
 
 # Authorisation Scopes
 
-Technical authorisation scopes are defined between Provider and Initiator and permit access to resource server endpoints. In addition, this specification also outlines the title and a simple description of the language to use to describe the data set referred to as Data Set Language. 
+Technical authorisation scopes are defined between Provider and Initiator and permit access to resource server endpoints. In addition, this specification also outlines the title and a simple description of the language to use to describe the data set referred to as Data Set Language.
 
 Providers and Initiators **MUST** utilise the prescribed authorisation scopes and Data Set Language when seeking Consumer authorisation.
 
