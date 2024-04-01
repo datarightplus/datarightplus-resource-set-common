@@ -1,0 +1,259 @@
+
+
+
+
+datarightplus                                                     S. Low
+Internet-Draft                                                   Biza.io
+Intended status: Informational                              1 April 2024
+Expires: 3 October 2024
+
+
+                    DataRight+: Common Resource Set
+         draft-authors-datarightplus-resource-set-common-latest
+
+Abstract
+
+   This is the resource set profile outlining the common endpoints
+   utilised across multiple industries.
+
+Notational Conventions
+
+   The keywords "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD
+   NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
+   interpreted as described in [RFC2119].
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 3 October 2024.
+
+Copyright Notice
+
+   Copyright (c) 2024 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.
+
+Table of Contents
+
+   1.  Scope
+   2.  Terminology
+   3.  Authorisation Scopes
+     3.1.  Overlapping Scope Optimisation
+   4.  Providers
+     4.1.  Authorisation Server
+     4.2.  Resource Server
+   5.  Initiators
+   6.  Acknowledgement
+   7.  Normative References
+   Author's Address
+
+1.  Scope
+
+   The scope of this document is intended to be limited to the shared
+   resource server endpoints, and their associated authorisation
+   contexts.
+
+2.  Terminology
+
+   This specification utilises the various terms outlined within
+   [DATARIGHTPLUS-ROSETTA].
+
+3.  Authorisation Scopes
+
+   Technical authorisation scopes are defined between Provider and
+   Initiator and permit access to resource server endpoints.  In
+   addition, this specification also outlines the title and a simple
+   description of the language to use to describe the data set referred
+   to as Data Set Language.
+
+   Providers and Initiators MUST utilise the prescribed authorisation
+   scopes and Data Set Language when seeking Consumer authorisation.
+
+   +=============================+============+========================+
+   | scope value                 | Consumer   | Data Set Language      |
+   |                             | Type       |                        |
+   +=============================+============+========================+
+   | common:customer.basic:read  | Individual | *Name and              |
+   |                             |            | occupation*            |
+   |                             |            | Name;                  |
+   |                             |            | Occupation;            |
+   +-----------------------------+------------+------------------------+
+   | common:customer.basic:read  | Entity     | *Organisation          |
+   |                             |            | profile*               |
+   |                             |            | Agent name and role;   |
+   |                             |            | Organisation name;     |
+   |                             |            | Organisation numbers   |
+   |                             |            | (ABN or ACN);          |
+   |                             |            | Charity status;        |
+   |                             |            | Establishment date;    |
+   |                             |            | Industry;              |
+   |                             |            | Organisation type      |
+   |                             |            | Country of             |
+   |                             |            | registration;          |
+   +-----------------------------+------------+------------------------+
+   | common:customer.detail:read | Individual | *Contact Details*      |
+   |                             |            | Phone;                 |
+   |                             |            | Email address;         |
+   |                             |            | Mail address;          |
+   |                             |            | Residential address;   |
+   +-----------------------------+------------+------------------------+
+   | common:customer.detail:read | Entity     | *Organisation          |
+   |                             |            | contact details*       |
+   |                             |            | Organisation           |
+   |                             |            | address;               |
+   |                             |            | Mail address;          |
+   |                             |            | Phone number;          |
+   +-----------------------------+------------+------------------------+
+
+                                  Table 1
+
+3.1.  Overlapping Scope Optimisation
+
+   In certain situations multiple technical scopes overlap which can
+   lead to confusion by the User granting permission for the Consumer
+   (which may be themselves or an entity they represent).  In order to
+   alleviate this Data Cluster Language presentation MUST be collapsed
+   as follows:
+
+   +=============================+============+=======================+
+   | scope value(s)              | Consumer   | Data Set Language     |
+   |                             | Type       |                       |
+   +=============================+============+=======================+
+   | common:customer.basic:read  | Individual | *Name, occupation,    |
+   | and                         |            | contact details*      |
+   | common:customer.detail:read |            | Name;                 |
+   |                             |            | Occupation;           |
+   |                             |            | Phone;                |
+   |                             |            | Email address;        |
+   |                             |            | Mail address;         |
+   |                             |            | Residential address;  |
+   +-----------------------------+------------+-----------------------+
+   | common:customer.basic:read  | Entity     | *Organisation profile |
+   | and                         |            | and contact details*  |
+   | common:customer.detail:read |            | Agent name and role;  |
+   |                             |            | Organisation name;    |
+   |                             |            | Organisation numbers  |
+   |                             |            | (ABN or ACN);         |
+   |                             |            | Charity status;       |
+   |                             |            | Establishment date;   |
+   |                             |            | Industry;             |
+   |                             |            | Organisation type;    |
+   |                             |            | Country of            |
+   |                             |            | registration;         |
+   |                             |            | Organisation address; |
+   |                             |            | Mail address;         |
+   |                             |            | Phone number;         |
+   +-----------------------------+------------+-----------------------+
+
+                                 Table 2
+
+4.  Providers
+
+   Providers are REQUIRED to deliver a number of authorisation and
+   resource server capabilities.
+
+4.1.  Authorisation Server
+
+   In addition to other provisions incorporated within the relevent
+   ecosystem set, the Provider authorisation server MUST:
+
+   1.  Support the scope parameters outlined within [Authorisation
+       Scopes];
+
+4.2.  Resource Server
+
+   The Provider MUST deliver the following endpoints, secured by the
+   [Authorisation Server] with the specified scope parameters and in
+   accordance with [DATARIGHTPLUS-REDOCLY]:
+
+   +=================+============================+=================+==========+
+   |HTTP Endpoint    |Authorisation Scope         |OpenAPI Operation|Supported |
+   |                 |                            |ID               |x-v       |
+   |                 |                            |                 |Parameters|
+   +=================+============================+=================+==========+
+   |GET /common/     |common:customer.basic:read  |getCustomer      |1         |
+   |customer         |                            |                 |          |
+   +-----------------+----------------------------+-----------------+----------+
+   |GET              |common:customer.basic:detail|getCustomerDetail|1         |
+   |/common/customer/|                            |                 |          |
+   |detail           |                            |                 |          |
+   +-----------------+----------------------------+-----------------+----------+
+
+                                  Table 3
+
+   In addition the Provider MUST deliver the following endpoints,
+   without authentication and generally available, in accordance with
+   [DATARIGHTPLUS-REDOCLY]:
+
+   +=================+======================+==========================+
+   | HTTP Endpoint   | OpenAPI Operation ID | Supported x-v            |
+   |                 |                      | Parameters               |
+   +=================+======================+==========================+
+   | GET /discovery/ | getOutages           | 1                        |
+   | outages         |                      |                          |
+   +-----------------+----------------------+--------------------------+
+   | GET /discovery/ | getStatus            | 1                        |
+   | status          |                      |                          |
+   +-----------------+----------------------+--------------------------+
+
+                                  Table 4
+
+5.  Initiators
+
+   This specification contains no additional provisions for Initiators.
+
+6.  Acknowledgement
+
+   The following people contributed to this document:
+
+   *  Stuart Low (Biza.io) - Editor
+
+   We acknowledge the contribution to the [CDS] of the following
+   individuals: - James Bligh (Data Standards Body) - Lead Architect for
+   the Consumer Data Right - Mark Verstege (Data Standards Body) - Lead
+   Architect, Banking & Information Security for the Consumer Data Right
+   - Ivan Hosgood (formerly Data Standards Body & ACCC) - Solutions
+   Architect
+
+7.  Normative References
+
+   [CDS]      Data Standards Body (Treasury), "Consumer Data Standards
+              (CDS)", <https://consumerdatastandardsaustralia.github.io/
+              standards>.
+
+   [DATARIGHTPLUS-REDOCLY]
+              Low, S., Kolera, B., and W. Cai, "DataRight+: Redocly",
+              <https://datarightplus.github.io/datarightplus-redocly/>.
+
+   [DATARIGHTPLUS-ROSETTA]
+              Low, S., "DataRight+ Rosetta Stone",
+              <https://datarightplus.github.io/datarightplus-specs/main/
+              datarightplus-rosetta.html>.
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/info/rfc2119>.
+
+Author's Address
+
+   Stuart Low
+   Biza.io
+   Email: stuart@biza.io
