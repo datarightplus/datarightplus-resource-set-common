@@ -6,7 +6,7 @@ submissionType = "independent"
 
 [seriesInfo]
 name = "Internet-Draft"
-value = "draft-authors-datarightplus-resource-set-common"
+value = "draft-authors-datarightplus-resource-set-common-latest"
 stream = "independent"
 status = "informational"
 
